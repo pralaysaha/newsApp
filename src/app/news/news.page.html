@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>news</ion-title>
+    <ion-title>Latest News</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+    <ion-card *ngFor="let x of articles?.articles" (click)="navigateToDetails(x)">
+      <ion-card-content>
+        <ion-card-title>
+          {{x.title}}
+        </ion-card-title>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

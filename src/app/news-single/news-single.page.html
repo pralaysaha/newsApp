@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>news-single</ion-title>
+    <ion-title> {{article.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card *ngIf="article">
+    <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
+    <ion-card-content>
+      <ion-card-title>
+        {{article.title}}
+      </ion-card-title>
+      <p>
+        {{article.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+<button ion-button color="light" clear (click)="returnToHome()">
+  < Back 
+</button>
